@@ -458,7 +458,13 @@ h3 {
   pointer-events: none;
   opacity: 0.4;
 }
-/* line 74, ../sass/layout/_style1.scss */
+@media screen and (max-width: 1199px) {
+  /* line 62, ../sass/layout/_style1.scss */
+  .style1 .trip-days > li {
+    left: 4%;
+  }
+}
+/* line 78, ../sass/layout/_style1.scss */
 .style1 .trip-days > li:after {
   content: '';
   display: block;
@@ -470,7 +476,7 @@ h3 {
   top: 0;
   left: 0;
 }
-/* line 86, ../sass/layout/_style1.scss */
+/* line 90, ../sass/layout/_style1.scss */
 .style1 .trip-days > li.active {
   opacity: 1;
   z-index: 5;
@@ -480,28 +486,28 @@ h3 {
   pointer-events: unset;
   opacity: 1;
 }
-/* line 95, ../sass/layout/_style1.scss */
+/* line 99, ../sass/layout/_style1.scss */
 .style1 .trip-days > li.active:after {
   display: none;
 }
-/* line 101, ../sass/layout/_style1.scss */
+/* line 105, ../sass/layout/_style1.scss */
 .style1 .trip-days h2 {
   font-size: 150%;
   color: #dadada;
   margin-bottom: 15px;
 }
-/* line 107, ../sass/layout/_style1.scss */
+/* line 111, ../sass/layout/_style1.scss */
 .style1 .trip-days .date-val {
   margin-left: 10px;
 }
-/* line 112, ../sass/layout/_style1.scss */
+/* line 116, ../sass/layout/_style1.scss */
 .style1 .date-val {
   display: inline-block;
   color: #dadada;
   font-size: 75%;
   transform: scale(0.9);
 }
-/* line 119, ../sass/layout/_style1.scss */
+/* line 123, ../sass/layout/_style1.scss */
 .style1 .slide-btn {
   display: block;
   width: 30px;
@@ -513,36 +519,36 @@ h3 {
   border-radius: 50%;
   opacity: 0.8;
 }
-/* line 130, ../sass/layout/_style1.scss */
+/* line 134, ../sass/layout/_style1.scss */
 .style1 .slide-btn:hover {
   opacity: 1;
 }
-/* line 135, ../sass/layout/_style1.scss */
+/* line 139, ../sass/layout/_style1.scss */
 .style1 .slide-left {
   left: -20px;
   transform: translateY(-50%);
 }
-/* line 140, ../sass/layout/_style1.scss */
+/* line 144, ../sass/layout/_style1.scss */
 .style1 .slide-right {
   right: -20px;
   transform: translateY(-50%) rotate(-180deg);
 }
-/* line 146, ../sass/layout/_style1.scss */
+/* line 150, ../sass/layout/_style1.scss */
 .style1 h4 span {
   display: inline-block;
   width: calc(100% - 45px);
 }
-/* line 152, ../sass/layout/_style1.scss */
+/* line 156, ../sass/layout/_style1.scss */
 .style1 .note-wrap {
   color: #969696;
 }
-/* line 156, ../sass/layout/_style1.scss */
+/* line 160, ../sass/layout/_style1.scss */
 .style1 .place-wrap {
   margin-top: 10px;
   padding-left: 15px;
   font-size: 106.25%;
 }
-/* line 161, ../sass/layout/_style1.scss */
+/* line 165, ../sass/layout/_style1.scss */
 .style1 .place-wrap img {
   width: 20px;
   height: auto;
@@ -550,11 +556,11 @@ h3 {
   vertical-align: text-bottom;
   margin-left: 5px;
 }
-/* line 169, ../sass/layout/_style1.scss */
+/* line 173, ../sass/layout/_style1.scss */
 .style1 .place-wrap li {
   margin-top: 10px;
 }
-/* line 172, ../sass/layout/_style1.scss */
+/* line 176, ../sass/layout/_style1.scss */
 .style1 .place-wrap li:nth-of-type(1) {
   margin-top: 0;
 }

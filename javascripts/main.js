@@ -1,4 +1,4 @@
-new Vue({
+var vm = new Vue({
   el: '#wrap',
   data: {
     datas: '',
@@ -9,11 +9,13 @@ new Vue({
     days: [],
     activeIdx: 0,
     dates: [],
-    places: []
+    places: [],
+    liDivide: 2,
+    screenWidth: ''
   },
   computed: {
     liWidth: function() {
-      return 'width: calc(100% / ' + this.during_days + ' / 2)';
+      return 'width: calc(100% / ' + this.during_days + ' / ' + this.liDivide + ')';
     },
     ulWidth: function() {
       return 'width: calc((100% + 30px) * ' + this.during_days + ')';
@@ -25,6 +27,20 @@ new Vue({
         valIdx = parseInt(val) + 1;
       $('.trip-days').find('>li').css('transform', 'translateX(-' + translateVal + '%) scale(0.95)');
       $('.trip-days').find('>li:nth-of-type(' + valIdx + ')').css('transform', 'translateX(-' + translateVal + '%) scale(1)');
+    },
+    screenWidth: function(val) {
+      var result = 0;
+      if (val < 1200) {
+        result = 1.5;
+      }
+      else if (val < 990) {
+        result = 0.1;
+      }
+      else {
+        result = 2;
+      }
+
+      this.liDivide = result;
     }
   },
   mounted: function() {
@@ -74,6 +90,7 @@ new Vue({
             }
             $vm.endDate = $vm.calEndDate($vm.startDate.replace(' ', ''), $vm.during_days);
             $vm.calDate();
+            vm.screenWidth = $(window).width();
           } else {
             console.log("找不到文件");
           }
@@ -119,4 +136,8 @@ new Vue({
       this.activeIdx = idx + 1;
     }
   }
+});
+
+$(window).resize(function() {
+  vm.screenWidth = $(this).width();
 });

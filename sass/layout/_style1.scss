@@ -71,6 +71,10 @@
       pointer-events: none;
       opacity: 0.4;
 
+      @media screen and (max-width: 1199px) {
+        left: 4%;
+      }
+
       &:after {
         content: '';
         display: block;
