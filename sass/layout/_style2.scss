@@ -1,0 +1,26 @@
+.style2 {
+  header {
+    background-color: $mainColor;
+
+    >div {
+      background-color: white;
+      width: 80%;
+      padding: 20px 30px;
+      min-width: 500px;
+      position: relative;
+      top: 50px;
+      left: 50%;
+      transform: translateX(-50%);
+      box-shadow: 0 0 8px $lightGray;
+    }
+  }
+
+  #main {
+    padding: 15px;
+    margin-top: 80px;
+  }
+
+  .trip-duration {
+    color: $lightGray;
+  }
+}

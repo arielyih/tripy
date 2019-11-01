@@ -1,0 +1,586 @@
+@charset "UTF-8";
+/* Welcome to Compass. Use this file to write IE specific override styles.
+ * Import this file using the following HTML or equivalent:
+ * <!--[if IE]>
+ *   <link href="/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
+ * <![endif]--> */
+/* color */
+/* font size */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+/* line 6, ../sass/base/_reset.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  line-height: 1.7;
+}
+
+/* HTML5 display-role reset for older browsers */
+/* line 28, ../sass/base/_reset.scss */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+/* line 32, ../sass/base/_reset.scss */
+body {
+  line-height: 1;
+  font-family: 'Helvetica Neue', 'Helvetica', 'Arial', 'PingFang TC', '微软雅黑', 'Microsoft YaHei', '华文细黑', 'STHeiti', sans-serif;
+}
+
+/* line 36, ../sass/base/_reset.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 39, ../sass/base/_reset.scss */
+blockquote, q {
+  quotes: none;
+}
+
+/* line 42, ../sass/base/_reset.scss */
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+/* line 47, ../sass/base/_reset.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 52, ../sass/base/_reset.scss */
+strong,
+b {
+  font-weight: bold;
+}
+
+/* line 56, ../sass/base/_reset.scss */
+* {
+  box-sizing: border-box;
+  outline: none;
+}
+
+/* line 1, ../sass/base/_common.scss */
+html,
+body {
+  height: 100%;
+}
+
+/* line 7, ../sass/base/_common.scss */
+body.scroll-none {
+  overflow: hidden;
+}
+
+/* line 12, ../sass/base/_common.scss */
+a {
+  display: inline-block;
+  text-decoration: none;
+}
+/* line 55, ../sass/helpers/_mixin.scss */
+a, a:hover, a:visited, a:focus {
+  color: #2B2B2B;
+}
+
+/* line 19, ../sass/base/_common.scss */
+a,
+button {
+  cursor: pointer;
+}
+/* line 23, ../sass/base/_common.scss */
+a:hover,
+button:hover {
+  opacity: 0.6;
+}
+@media screen and (max-width: 768px) {
+  /* line 23, ../sass/base/_common.scss */
+  a:hover,
+  button:hover {
+    opacity: 1;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  /* line 32, ../sass/base/_common.scss */
+  .mobile-show {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  /* line 38, ../sass/base/_common.scss */
+  .hidden-m {
+    display: none !important;
+  }
+}
+
+/* line 44, ../sass/base/_common.scss */
+.hide {
+  display: none !important;
+}
+
+/* line 48, ../sass/base/_common.scss */
+.text-hidden {
+  pointer-events: none;
+  position: absolute;
+  text-indent: 100%;
+  white-space: nowrap;
+  width: 0;
+  overflow: hidden;
+}
+
+/* line 57, ../sass/base/_common.scss */
+.mask {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  z-index: 10;
+}
+/* line 66, ../sass/base/_common.scss */
+.mask.black {
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+}
+
+/* line 73, ../sass/base/_common.scss */
+.loading-wrap {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #fff;
+  z-index: 35;
+}
+/* line 82, ../sass/base/_common.scss */
+.loading-wrap.opacity {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+/* line 87, ../sass/base/_common.scss */
+.loading-icon {
+  display: inline-block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+/* line 96, ../sass/base/_common.scss */
+.loading-icon div {
+  animation: lds-roller 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  transform-origin: 32px 32px;
+}
+/* line 100, ../sass/base/_common.scss */
+.loading-icon div:after {
+  content: " ";
+  display: block;
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #52bfbb;
+  margin: -3px 0 0 -3px;
+}
+/* line 112, ../sass/base/_common.scss */
+.loading-icon div:nth-child(even):after {
+  background: #f9ae37;
+}
+/* line 117, ../sass/base/_common.scss */
+.loading-icon div:nth-child(1) {
+  animation-delay: -0.036s;
+}
+/* line 120, ../sass/base/_common.scss */
+.loading-icon div:nth-child(1):after {
+  top: 50px;
+  left: 50px;
+}
+/* line 126, ../sass/base/_common.scss */
+.loading-icon div:nth-child(2) {
+  animation-delay: -0.072s;
+}
+/* line 129, ../sass/base/_common.scss */
+.loading-icon div:nth-child(2):after {
+  top: 54px;
+  left: 45px;
+}
+/* line 135, ../sass/base/_common.scss */
+.loading-icon div:nth-child(3) {
+  animation-delay: -0.108s;
+}
+/* line 138, ../sass/base/_common.scss */
+.loading-icon div:nth-child(3):after {
+  top: 57px;
+  left: 39px;
+}
+/* line 144, ../sass/base/_common.scss */
+.loading-icon div:nth-child(4) {
+  animation-delay: -0.144s;
+}
+/* line 147, ../sass/base/_common.scss */
+.loading-icon div:nth-child(4):after {
+  top: 58px;
+  left: 32px;
+}
+/* line 153, ../sass/base/_common.scss */
+.loading-icon div:nth-child(5) {
+  animation-delay: -0.18s;
+}
+/* line 156, ../sass/base/_common.scss */
+.loading-icon div:nth-child(5):after {
+  top: 57px;
+  left: 25px;
+}
+/* line 162, ../sass/base/_common.scss */
+.loading-icon div:nth-child(6) {
+  animation-delay: -0.216s;
+}
+/* line 165, ../sass/base/_common.scss */
+.loading-icon div:nth-child(6):after {
+  top: 54px;
+  left: 19px;
+}
+/* line 171, ../sass/base/_common.scss */
+.loading-icon div:nth-child(7) {
+  animation-delay: -0.252s;
+}
+/* line 174, ../sass/base/_common.scss */
+.loading-icon div:nth-child(7):after {
+  top: 50px;
+  left: 14px;
+}
+/* line 180, ../sass/base/_common.scss */
+.loading-icon div:nth-child(8) {
+  animation-delay: -0.288s;
+}
+/* line 183, ../sass/base/_common.scss */
+.loading-icon div:nth-child(8):after {
+  top: 45px;
+  left: 10px;
+}
+
+@keyframes lds-roller {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+/* line 202, ../sass/base/_common.scss */
+#msg-wrap {
+  font-size: 112.5%;
+  position: fixed;
+  z-index: 30;
+  bottom: 20vh;
+  border-radius: 5px 0 0 5px;
+  right: -100vw;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  padding: 15px;
+  max-width: 70vw;
+}
+/* line 214, ../sass/base/_common.scss */
+#msg-wrap.msg-show {
+  right: 0;
+  animation: 5s msg forwards;
+}
+/* line 219, ../sass/base/_common.scss */
+#msg-wrap p {
+  font-size: 95%;
+}
+
+@keyframes msg {
+  0% {
+    right: -100vw;
+  }
+  10% {
+    right: 0;
+  }
+  80% {
+    right: 0;
+  }
+  100% {
+    right: -100vw;
+  }
+}
+/* line 1, ../sass/layout/_layout.scss */
+#wrap {
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+/* line 7, ../sass/layout/_layout.scss */
+.trip-title {
+  font-size: 250%;
+  font-weight: bold;
+}
+
+/* line 12, ../sass/layout/_layout.scss */
+.trip-days {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
+/* line 17, ../sass/layout/_layout.scss */
+.trip-days li {
+  width: 100%;
+  display: inline-block;
+}
+
+/* line 23, ../sass/layout/_layout.scss */
+.trip-duration {
+  font-size: 137.5%;
+}
+/* line 27, ../sass/layout/_layout.scss */
+.trip-duration span:nth-last-of-type(1) {
+  font-size: 75%;
+  margin-left: 5px;
+}
+
+/* line 34, ../sass/layout/_layout.scss */
+.events-wrap {
+  margin-bottom: 30px;
+}
+
+/* line 39, ../sass/layout/_layout.scss */
+.days-wrap li {
+  cursor: pointer;
+}
+
+/* line 44, ../sass/layout/_layout.scss */
+h3,
+h4 {
+  font-size: 125%;
+}
+
+/* line 49, ../sass/layout/_layout.scss */
+h3 {
+  color: #52bfbb;
+  font-weight: bold;
+}
+
+/* line 3, ../sass/layout/_style1.scss */
+.style1 header,
+.style1 #main {
+  padding: 15px;
+  height: 100%;
+  float: left;
+}
+/* line 10, ../sass/layout/_style1.scss */
+.style1 header {
+  width: 330px;
+  overflow-y: auto;
+  position: relative;
+  z-index: 10;
+}
+/* line 17, ../sass/layout/_style1.scss */
+.style1 .trip-title {
+  color: #f9ae37;
+}
+/* line 21, ../sass/layout/_style1.scss */
+.style1 #main {
+  width: calc(100% - 330px);
+  overflow: hidden;
+}
+/* line 26, ../sass/layout/_style1.scss */
+.style1 .trip-duration {
+  color: #969696;
+}
+/* line 29, ../sass/layout/_style1.scss */
+.style1 .trip-duration span {
+  line-height: 1;
+}
+/* line 32, ../sass/layout/_style1.scss */
+.style1 .trip-duration span:nth-last-of-type(1) {
+  display: block;
+  text-align: right;
+}
+/* line 39, ../sass/layout/_style1.scss */
+.style1 .days-wrap {
+  height: calc(100% - 200px);
+  margin-top: 70px;
+  font-size: 125%;
+}
+/* line 44, ../sass/layout/_style1.scss */
+.style1 .days-wrap span:not(.date-val) {
+  padding: 5px 10px;
+  border-radius: 15px;
+  display: inline-block;
+  margin-bottom: 15px;
+}
+/* line 51, ../sass/layout/_style1.scss */
+.style1 .days-wrap .active {
+  background-color: #52bfbb;
+  color: #fff;
+}
+/* line 57, ../sass/layout/_style1.scss */
+.style1 .trip-days {
+  height: 100%;
+  overflow-y: auto;
+  padding: 5px 5px 10px;
+}
+/* line 62, ../sass/layout/_style1.scss */
+.style1 .trip-days > li {
+  width: 100%;
+  float: left;
+  height: 100%;
+  transition: 1s transform;
+  position: relative;
+  left: 5.5%;
+  transform: scale(0.95);
+  padding: 15px;
+  pointer-events: none;
+  opacity: 0.4;
+}
+/* line 74, ../sass/layout/_style1.scss */
+.style1 .trip-days > li:after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(82, 191, 187, 0.8);
+  z-index: 5;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+/* line 86, ../sass/layout/_style1.scss */
+.style1 .trip-days > li.active {
+  opacity: 1;
+  z-index: 5;
+  background-color: #fff;
+  box-shadow: 0 2px 10px #969696;
+  transform: scale(1);
+  pointer-events: unset;
+  opacity: 1;
+}
+/* line 95, ../sass/layout/_style1.scss */
+.style1 .trip-days > li.active:after {
+  display: none;
+}
+/* line 101, ../sass/layout/_style1.scss */
+.style1 .trip-days h2 {
+  font-size: 150%;
+  color: #dadada;
+  margin-bottom: 15px;
+}
+/* line 107, ../sass/layout/_style1.scss */
+.style1 .trip-days .date-val {
+  margin-left: 10px;
+}
+/* line 112, ../sass/layout/_style1.scss */
+.style1 .date-val {
+  display: inline-block;
+  color: #dadada;
+  font-size: 75%;
+  transform: scale(0.9);
+}
+/* line 119, ../sass/layout/_style1.scss */
+.style1 .slide-btn {
+  display: block;
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 50%;
+  background: url("../images/slider.svg") no-repeat #f9ae37 40% 50%;
+  background-size: auto 80%;
+  border-radius: 50%;
+  opacity: 0.8;
+}
+/* line 130, ../sass/layout/_style1.scss */
+.style1 .slide-btn:hover {
+  opacity: 1;
+}
+/* line 135, ../sass/layout/_style1.scss */
+.style1 .slide-left {
+  left: -20px;
+  transform: translateY(-50%);
+}
+/* line 140, ../sass/layout/_style1.scss */
+.style1 .slide-right {
+  right: -20px;
+  transform: translateY(-50%) rotate(-180deg);
+}
+/* line 146, ../sass/layout/_style1.scss */
+.style1 h4 span {
+  display: inline-block;
+  width: calc(100% - 45px);
+}
+/* line 152, ../sass/layout/_style1.scss */
+.style1 .note-wrap {
+  color: #969696;
+}
+/* line 156, ../sass/layout/_style1.scss */
+.style1 .place-wrap {
+  margin-top: 10px;
+  padding-left: 15px;
+  font-size: 106.25%;
+}
+/* line 161, ../sass/layout/_style1.scss */
+.style1 .place-wrap img {
+  width: 20px;
+  height: auto;
+  pointer-events: none;
+  vertical-align: text-bottom;
+  margin-left: 5px;
+}
+/* line 169, ../sass/layout/_style1.scss */
+.style1 .place-wrap li {
+  margin-top: 10px;
+}
+/* line 172, ../sass/layout/_style1.scss */
+.style1 .place-wrap li:nth-of-type(1) {
+  margin-top: 0;
+}
+
+/* line 2, ../sass/layout/_style2.scss */
+.style2 header {
+  background-color: #f9ae37;
+}
+/* line 5, ../sass/layout/_style2.scss */
+.style2 header > div {
+  background-color: white;
+  width: 80%;
+  padding: 20px 30px;
+  min-width: 500px;
+  position: relative;
+  top: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  box-shadow: 0 0 8px #969696;
+}
+/* line 18, ../sass/layout/_style2.scss */
+.style2 #main {
+  padding: 15px;
+  margin-top: 80px;
+}
+/* line 23, ../sass/layout/_style2.scss */
+.style2 .trip-duration {
+  color: #969696;
+}

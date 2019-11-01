@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+  <meta name="robots" content="noindex">
+  <title></title>
+  <link rel="stylesheet" href="stylesheets/main.css">
+</head>
+
+<body>
+  <div id="wrap" class="style1">
+    <header>
+      <div class="title-wrap">
+        <h1 class="trip-title">{{ title }}</h1>
+        <div class="trip-duration">
+          <span>{{ startDate }}</span> ~ <span>{{ endDate }}</span>
+          <span>({{ during_days }} days)</span>
+        </div>
+      </div>
+      <ul class="days-wrap">
+        <li v-for="(item, idx) in during_days" @click="daysClick(item)">
+          <span :class="idx == activeIdx ? 'active' : ''">
+            Day {{ item }}
+            <span class="date-val">{{ dates[idx] }}</span>
+          </span>
+        </li>
+      </ul>
+    </header>
+    <div id="main">
+      <img src="" alt="Tripy" class="hide">
+      <ul class="trip-days" :style="ulWidth">
+        <li v-for="(schedules, idx) in days" :style="liWidth" :class="idx == activeIdx ? 'active' : ''">
+          <a href="#" v-if="(idx != 0) && (idx == activeIdx)" class="slide-left slide-btn" @click="slideLeftClick(idx)"></a>
+          <h2>Day {{ idx+1 }}<span class="date-val">{{ dates[idx] }}</span></h2>
+          <div v-if="schedules == undefined">無資料</div>
+          <div v-else v-for="schedule in schedules">
+            <div class="events-wrap" :data-evt-id="schedule.id">
+              <h3>{{ schedule.startHour }}:{{ schedule.startMin }} ~ {{ schedule.endHour }}:{{ schedule.endMin }}</h3>
+              <h4>
+                <span>{{ schedule.title }}</span>
+              </h4>
+              <h5 class="note-wrap">{{ schedule.note }}</h5>
+              <ul class="place-wrap" v-for="(place, idx) in places" v-if="schedule.id == place.event.id">
+                <li>
+                  <a :href="'https://www.google.com/maps/search/?api=1&query=' + place.latitude + ',' + place.longitude" target="_blank">
+                    {{ place.title }}
+                    <img src="images/group2@2x.png" alt="open map">
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <a href="#" v-if="(idx != (days.length - 1)) && (idx == activeIdx)" class="slide-right slide-btn" @click="slideRightClick(idx)"></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.15/lodash.min.js"></script>
+<!-- <script src="https://www.gstatic.com/firebasejs/5.5.6/firebase.js"></script> -->
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.2.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/5.5.5/firebase-firestore.js"></script>
+<script src="javascripts/jquery.min.js"></script>
+<script src="javascripts/vue.js"></script>
+</script>
+<script src=""></script>
+<script src="javascripts/main.js"></script>
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+</html>

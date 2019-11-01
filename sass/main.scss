@@ -1,0 +1,15 @@
+/* Welcome to Compass. Use this file to write IE specific override styles.
+ * Import this file using the following HTML or equivalent:
+ * <!--[if IE]>
+ *   <link href="/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
+ * <![endif]--> */
+
+@import "helpers/_variable.scss";
+@import "helpers/_mixin.scss";
+
+@import "base/_reset.scss";
+@import "base/_common.scss";
+
+@import "layout/_layout.scss";
+@import "layout/_style1.scss";
+@import "layout/_style2.scss";
